@@ -1,0 +1,14 @@
+canvas { 
+    border: 0.3rem solid darkgreen;
+}
+
+html, body {
+    overflow: hidden;
+    padding: 0; 
+    margin: 0; 
+}
+#myCanvas {
+    background-image: url('pictures/game_background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
