@@ -3,14 +3,12 @@ class Tree {
     constructor() {
         this.leftBranchX = 350;
         this.leftBranchY = 30;
-        this.leftBranchWidth = 50;
-        this.leftBranchHeight = 25;
-
         this.rightBranchX = 480;
         this.rightBranchY = 30;
-        this.rightBranchWidth = 50;
-        this.rightBranchHeight = 25;
+        this.branchWidth = 50;
+        this.branchHeight = 25;
 
+        this.branchType;
         this.mainTreeImage = new Image();
         this.mainTreeImage.src = "./pictures/main_tree.png";
         this.treeArr = [];
@@ -29,18 +27,27 @@ class Tree {
 
     createRandomBranch() {
         let branchTypes = [0, 1, 2];
-        let randomizer = shuffle(branchTypes);
+        let randomizer = this.shuffle(branchTypes);
         this.treeArr[0] = randomizer[0];
 
-        switch (treeArr[0]) {
+        switch (this.treeArr[0]) {
             case 0:
-                continue;
+                console.log("Kein Branch erstellt");
+                break;
             case 1:
-                this.leftBranchImage = new Image();
-                this.leftBranchImage.src = "./pictures/branch_left.png";
+                this.branchType = "left";
+                this.branchImage = new Image();
+                this.branchImage.src = "./pictures/branch_left.png";
+                this.treeArr[0] = this.branchImage;
+                console.log("created branch on the left")
+                break;
             case 2:
-                this.rightBranchImage = new Image();
-                this.rightBranchImage.src = "./pictures/branch_right.png";
+                this.branchType = "right";
+                this.branchImage = new Image();
+                this.branchImage.src = "./pictures/branch_right.png";
+                this.treeArr[0] = this.branchImage;
+                console.log("created branch on the right")
+                break;
         }
 
     }
@@ -54,7 +61,6 @@ class Tree {
         }
 
         return newArr;
-
     }
 }
 

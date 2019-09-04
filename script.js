@@ -25,13 +25,8 @@ gameWindow = new Gamewindow();
 window.onload = () => {
     document.getElementById("myCanvas").style.background = "";
     gameWindow.createBackground();
-    gameWindow.drawBackground();
     gameWindow.drawCharacter();
     gameWindow.drawTree();
+    player1Tree.createRandomBranch();
+    gameWindow.drawBranches();
 }
-
-//player1Tree.createRandomBranch();
-//player1Tree.moveBranches();
-
-//createCharacter();
-
