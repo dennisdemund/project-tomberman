@@ -15,7 +15,11 @@ class Gamewindow {
         this.canvas.height = this.height;
         this.backgroundImage = new Image();
         this.backgroundImage.src = "./pictures/game_background.png";
+    }
 
+    drawHUD() {
+        this.ctx.font = "30px Arial";
+        this.ctx.fillText(player1.score,440,150);
     }
 
     drawCharacter() {
@@ -33,27 +37,28 @@ class Gamewindow {
     }
 
     drawBranches() {
-        console.log(player1Tree.treeArr.length);
         for (let i = 0; i < player1Tree.treeArr.length; i++) {
-            if (player1Tree.branchType == "left") {
-                console.log("drawing branch on the left side")
-                console.log(player1Tree.treeArr[i]);
-                console.log(player1Tree.leftBranchX);
-                console.log(player1Tree.leftBranchY);
-                console.log(player1Tree.branchWidth);
-                console.log(player1Tree.branchHeight);
-                this.ctx.drawImage(player1Tree.treeArr[i], player1Tree.leftBranchX, player1Tree.leftBranchY, player1Tree.branchWidth, player1Tree.branchHeight);
+            if (player1Tree.treeArr[i] == 1) {
+                this.ctx.drawImage(player1Tree.branchImageLeft, player1Tree.leftBranchX, player1Tree.leftBranchY + (i * 120), player1Tree.branchWidth, player1Tree.branchHeight);
             }
 
-            if (player1Tree.branchType == "right") {
-                console.log("drawing branch on the right side")
-                console.log(player1Tree.treeArr[i]);
-                console.log(player1Tree.rightBranchX);
-                console.log(player1Tree.rightBranchY);
-                console.log(player1Tree.branchWidth);
-                console.log(player1Tree.branchHeight);
-                this.ctx.drawImage(player1Tree.treeArr[i], player1Tree.rightBranchX, player1Tree.rightBranchY, player1Tree.branchWidth, player1Tree.branchHeight);
+            if (player1Tree.treeArr[i] == 2) {
+                this.ctx.drawImage(player1Tree.branchImageRight, player1Tree.rightBranchX, player1Tree.rightBranchY + (i * 120), player1Tree.branchWidth, player1Tree.branchHeight);
             }
+        
+        }
+    }
+
+    clearBranches() {
+        for (let i = 0; i < player1Tree.treeArr.length; i++) {
+            if (player1Tree.treeArr[i] == 1) {
+                this.ctx.clearRect(player1Tree.leftBranchX, player1Tree.leftBranchY + (i * 120), player1Tree.branchWidth, player1Tree.branchHeight);
+            }
+
+            if (player1Tree.treeArr[i] == 2) {
+                this.ctx.clearRect(player1Tree.rightBranchX, player1Tree.rightBranchY + (i * 120), player1Tree.branchWidth, player1Tree.branchHeight);
+            }
+        
         }
     }
 
