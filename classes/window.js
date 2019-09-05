@@ -18,8 +18,9 @@ class Gamewindow {
     }
 
     drawHUD() {
-        this.ctx.font = "30px Arial";
-        this.ctx.fillText(player1.score,440,150);
+        this.ctx.font = "40px Arial";
+        this.ctx.clearRect(10,400,400,300);
+        this.ctx.fillText(`Current Score: ${player1.score}`,10,450);
     }
 
     drawCharacter() {
@@ -62,4 +63,17 @@ class Gamewindow {
         }
     }
 
+    checkForCollision() {
+        if(player1Tree.treeArr[6] == 1 && player1.characterPos == "left") {
+            console.log("Babäm links");
+            window.alert("GAME OVER!");
+            window.location.reload(); 
+        }
+        if(player1Tree.treeArr[6] == 2 && player1.characterPos == "right") {
+            console.log("Babäm rechts");
+            window.alert("GAME OVER!");
+            window.location.reload(); 
+        }
+        player1.score++;
+    }
 }

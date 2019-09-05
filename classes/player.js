@@ -14,12 +14,11 @@ class Player {
         if (direction == "right" && this.characterPos == "left") {
             this.characterX += 150;
             this.characterPos = "right";
-            this.score++;
         }
+        
         if (direction == "left" && this.characterPos == "right") {
             this.characterX -= 150;
             this.characterPos = "left";
-            this.score++;
         }
     }
 
