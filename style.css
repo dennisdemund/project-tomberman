@@ -14,7 +14,7 @@ html, body {
 }
 
 .progressbar {
-    width: 50%;
+    width: 30%;
     margin: 25px auto;
     border: solid 0.2rem #000;
   }

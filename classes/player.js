@@ -15,11 +15,10 @@ class Player {
             this.characterX += 150;
             this.characterPos = "right";
         }
-        
+
         if (direction == "left" && this.characterPos == "right") {
             this.characterX -= 150;
             this.characterPos = "left";
         }
     }
-
 }

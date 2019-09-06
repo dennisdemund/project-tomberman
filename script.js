@@ -32,44 +32,46 @@ function createProgressbar(id, duration, callback) {
     // We select the div that we want to turn into a progressbar
     var progressbar = document.getElementById(id);
     progressbar.className = 'progressbar';
-  
+
     // We create the div that changes width to show progress
     var progressbarinner = document.createElement('div');
     progressbarinner.className = 'inner';
-  
+
     // Now we set the animation parameters
     progressbarinner.style.animationDuration = duration;
-  
+
     // Eventually couple a callback
-    if (typeof(callback) === 'function') {
-      progressbarinner.addEventListener('animationend', callback);
+    if (typeof (callback) === 'function') {
+        progressbarinner.addEventListener('animationend', callback);
     }
-  
+
     // Append the progressbar to the main progressbardiv
     progressbar.appendChild(progressbarinner);
-  
+
     // When everything is set up we start the animation
     progressbarinner.style.animationPlayState = 'running';
-  }
-  
-  addEventListener('load', function() {
-    createProgressbar('progressbar3', '20s', function() {
-      alert('Time´s Up! Better Luck Next Time!');
-      window.location.reload(); 
+}
+
+addEventListener('load', function () {
+    createProgressbar('progressbar3', '20s', function () {
+        alert('Time´s Up! Better Luck Next Time!');
+        window.location.reload();
     });
-  });
+});
+
+var sample = document.getElementById("audio");
 
 //Creating Objects from other classes
 player1Tree = new Tree();
 player1 = new Player();
 gameWindow = new Gamewindow();
 
-
+//Loading the HTML
 window.onload = () => {
     document.getElementById("myCanvas").style.background = "";
+    sample.play();
     gameWindow.createBackground();
     gameWindow.drawCharacter();
     gameWindow.drawTree();
     gameWindow.drawHUD();
 }
-
