@@ -59,7 +59,11 @@ addEventListener('load', function () {
     });
 });
 
-var sample = document.getElementById("audio");
+var gameAudio = document.getElementById("gameAudio");
+
+function autoPlay() {
+    gameAudio.play(); //play the audio file
+ }
 
 //Creating Objects from other classes
 player1Tree = new Tree();
@@ -69,7 +73,7 @@ gameWindow = new Gamewindow();
 //Loading the HTML
 window.onload = () => {
     document.getElementById("myCanvas").style.background = "";
-    sample.play();
+    gameAudio.play(); 
     gameWindow.createBackground();
     gameWindow.drawCharacter();
     gameWindow.drawTree();
