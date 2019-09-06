@@ -6,15 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.js"></script>
 </head>
 <body>
     <div id='progressbar3'></div>
 
-    <audio id="gameAudio"> <!--Source the audio file. -->
-        <source src="./soundtracks/gameSoundtrack.ogg" type="audio/ogg">
-    </audio>
+    <audio src="./soundtracks/gameSoundtrack.ogg" id="audio" muted='muted' autostart="true"></audio>
 
     <canvas id="myCanvas" width="800" height="600"></canvas>
+
 
     <script src="./classes/window.js"></script>
     <script src="./classes/player.js"></script>

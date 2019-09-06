@@ -1,6 +1,18 @@
 //Creating necessary EventHandlers
 document.addEventListener("keydown", keyDownHandler);
 
+function preload() {
+    soundFormats('mp3', 'ogg');
+    mySound = loadSound('soundtracks/gameSoundtrack.mp3');
+}
+
+function setup() {
+    mySound.setVolume(0.1);
+    mySound.play();
+}
+
+
+
 function keyDownHandler(e) {
     if (e.key == "Right" || e.key == "ArrowRight") {
         gameWindow.clearCharacter();
@@ -59,21 +71,25 @@ addEventListener('load', function () {
     });
 });
 
-var gameAudio = document.getElementById("gameAudio");
-
-function autoPlay() {
-    gameAudio.play(); //play the audio file
- }
-
 //Creating Objects from other classes
 player1Tree = new Tree();
 player1 = new Player();
 gameWindow = new Gamewindow();
 
+
+playSound = async soundname =>
+  { 
+    try{
+        var thissound = document.getElementById(soundname);
+        await thissound.play();
+    }
+    catch(err){console.log(err.message)} 
+  }
+
 //Loading the HTML
 window.onload = () => {
     document.getElementById("myCanvas").style.background = "";
-    gameAudio.play(); 
+    playSound("audio");
     gameWindow.createBackground();
     gameWindow.drawCharacter();
     gameWindow.drawTree();

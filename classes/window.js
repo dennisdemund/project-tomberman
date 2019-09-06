@@ -75,4 +75,6 @@ class Gamewindow {
         player1.score++;
 
     }
+
+
 }

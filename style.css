@@ -13,6 +13,9 @@ html, body {
     background-size: cover;
 }
 
+.p5Canvas {
+  display: none;
+}
 .progressbar {
     width: 30%;
     margin: 25px auto;
