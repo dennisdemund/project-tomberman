@@ -9,7 +9,7 @@ html, body {
 }
 #myCanvas {
     background-image: url('pictures/game_background.png');
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
 }
 
