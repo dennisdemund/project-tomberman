@@ -1,17 +1,32 @@
 //Creating necessary EventHandlers
 document.addEventListener("keydown", keyDownHandler);
 
+var element = document.getElementById("myprogressBar");    
+var counter = 100;
+
+function updateProgressBar() { 
+    var finished = setInterval(scene, 70); 
+    function scene() { 
+      if (counter == 0) { 
+        clearInterval(finished);
+        window.alert("Your Time´s up! Better Luck next Time!");
+        window.location.reload();
+      } else { 
+        counter--;  
+        element.style.width = counter + '%';  
+      } 
+    } 
+  } 
+
 function preload() {
     soundFormats('mp3', 'ogg');
     mySound = loadSound('soundtracks/gameSoundtrack.mp3');
 }
 
 function setup() {
-    mySound.setVolume(0.1);
+    mySound.setVolume(0.4);
     mySound.play();
 }
-
-
 
 function keyDownHandler(e) {
     if (e.key == "Right" || e.key == "ArrowRight") {
@@ -22,9 +37,9 @@ function keyDownHandler(e) {
         gameWindow.drawHUD();
         player1Tree.moveBranches();
         gameWindow.checkForCollision();
+        counter = counter + 2;  
         player1Tree.createRandomBranch();
         gameWindow.drawBranches();
-
     }
     else if (e.key == "Left" || e.key == "ArrowLeft") {
         gameWindow.clearCharacter();
@@ -34,42 +49,13 @@ function keyDownHandler(e) {
         gameWindow.drawHUD();
         player1Tree.moveBranches();
         gameWindow.checkForCollision();
+        counter = counter + 2;  
         player1Tree.createRandomBranch();
         gameWindow.drawBranches();
-
     }
 }
 
-function createProgressbar(id, duration, callback) {
-    // We select the div that we want to turn into a progressbar
-    var progressbar = document.getElementById(id);
-    progressbar.className = 'progressbar';
 
-    // We create the div that changes width to show progress
-    var progressbarinner = document.createElement('div');
-    progressbarinner.className = 'inner';
-
-    // Now we set the animation parameters
-    progressbarinner.style.animationDuration = duration;
-
-    // Eventually couple a callback
-    if (typeof (callback) === 'function') {
-        progressbarinner.addEventListener('animationend', callback);
-    }
-
-    // Append the progressbar to the main progressbardiv
-    progressbar.appendChild(progressbarinner);
-
-    // When everything is set up we start the animation
-    progressbarinner.style.animationPlayState = 'running';
-}
-
-addEventListener('load', function () {
-    createProgressbar('progressbar3', '20s', function () {
-        alert('Time´s Up! Better Luck Next Time!');
-        window.location.reload();
-    });
-});
 
 //Creating Objects from other classes
 player1Tree = new Tree();
@@ -94,6 +80,6 @@ window.onload = () => {
     gameWindow.drawCharacter();
     gameWindow.drawTree();
     gameWindow.drawHUD();
-}
+    updateProgressBar();
 
-//Messing around with the P5 Library
+}
