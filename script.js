@@ -32,13 +32,14 @@ function setup() {
 
 function keyDownHandler(e) {
     if (e.key == "Right" || e.key == "ArrowRight") {
+
         gameWindow.clearCharacter();
         player1.moveCharacter("right");
         gameWindow.clearBranches();
         gameWindow.drawCharacter();
-        gameWindow.drawHUD();
         player1Tree.moveBranches();
         gameWindow.checkForCollision();
+        gameWindow.refreshCurrentScore();
         counter = counter + 2;  
         player1Tree.createRandomBranch();
         gameWindow.drawBranches();
@@ -48,9 +49,9 @@ function keyDownHandler(e) {
         player1.moveCharacter("left");
         gameWindow.clearBranches();
         gameWindow.drawCharacter();
-        gameWindow.drawHUD();
         player1Tree.moveBranches();
         gameWindow.checkForCollision();
+        gameWindow.refreshCurrentScore();
         counter = counter + 2;  
         player1Tree.createRandomBranch();
         gameWindow.drawBranches();
@@ -68,6 +69,5 @@ window.onload = () => {
     gameWindow.createBackground();
     gameWindow.drawCharacter();
     gameWindow.drawTree();
-    gameWindow.drawHUD();
     updateProgressBar();
 }

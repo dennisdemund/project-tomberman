@@ -5,20 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Tomberman</title>
     <link rel="stylesheet" href="./style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
-    <script language="javascript" type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.js"></script>
-
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.js"></script>
 
 </head>
 
 <body>
     <audio src="./soundtracks/gameSoundtrack.ogg" id="audio" muted='muted' autostart="true"></audio>
 
-<h1>Project Tomberman</h1>
+    <h1>Project Tomberman</h1>
+
+    <div class="flexbox">
+        <h2 id="score">Current Score: 0</h2>
+        <h2 id="score">High Score: 0</h2>
+    </div>
+
 
     <div class="flexbox">
         <img id="charLeft" src="./pictures/character_standing_left.png" alt="Tomberman">
@@ -26,8 +30,14 @@
         <img id="charRight" src="./pictures/character_standing_right.png" alt="Tomberman">
     </div>
 
-    <div id="Progress_Status">
-        <div id="myprogressBar"></div>
+    <div class="flexbox">
+        <img id="arrowLeft" src="./pictures/arrow_left.png" alt="Arrow Left">
+
+        <div id="Progress_Status">
+            <div id="myprogressBar"></div>
+        </div>
+
+        <img id="arrowRight" src="./pictures/arrow_right.png" alt="Arrow Right">
     </div>
 
     <script src="./classes/window.js"></script>

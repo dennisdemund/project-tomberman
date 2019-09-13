@@ -15,10 +15,8 @@ class Gamewindow {
         this.canvas.height = this.height;
     }
 
-    drawHUD() {
-        this.ctx.font = "40px Arial";
-        this.ctx.clearRect(10, 400, 400, 300);
-        this.ctx.fillText(`Current Score: ${player1.score}`, 10, 450);
+    refreshCurrentScore() {
+        document.getElementById("score").innerHTML = `Current Score: ${player1.score}`;
     }
 
     drawCharacter() {
