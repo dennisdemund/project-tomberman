@@ -3,7 +3,7 @@ class Gamewindow {
     constructor() {
         this.width = 1000;
         this.height = 800;
-        this.characterY = this.height - 70;
+        this.characterY = this.height - 80;
         this.mainTreeX = 400;
         this.mainTreeY = 20;
     }

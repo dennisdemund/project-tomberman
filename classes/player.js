@@ -3,7 +3,7 @@ class Player {
     constructor() {
         this.characterX = 340;
         this.characterWidth = 70;
-        this.characterHeight = 70;
+        this.characterHeight = 80;
         this.characterPos = "left";
         this.characterImage = new Image();
         this.characterImage.src = "./pictures/character_standing.png";

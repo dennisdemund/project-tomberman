@@ -1,9 +1,9 @@
 class Tree {
 
     constructor() {
-        this.leftBranchX = 340;
+        this.leftBranchX = 350;
         this.leftBranchY = 50;
-        this.rightBranchX = 500;
+        this.rightBranchX = 490;
         this.rightBranchY = 50;
         this.branchWidth = 50;
         this.branchHeight = 25;
