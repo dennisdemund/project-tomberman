@@ -1,5 +1,12 @@
+:root {
+  background-color: burlywood;
+}
+
 canvas { 
-    border: 0.3rem solid darkgreen;
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 800px;
 }
 
 html, body {
@@ -13,12 +20,18 @@ html, body {
     background-size: cover;
 }
 
+h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
 .p5Canvas {
   display: none;
 }
 
-#Progress_Status { 
-  width: 50%; 
+#Progress_Status {
+  margin: auto; 
+  width: 40%; 
   background-color: #ddd; 
 
 } 
@@ -31,3 +44,22 @@ html, body {
   line-height: 32px; 
   color: black; 
 } 
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+}
+
+#charLeft {
+  margin: auto;
+  text-align: left;
+  height: 30rem;
+  width: auto;
+}
+
+#charRight {
+  margin: auto;
+  text-align: left;
+  height: 30rem;
+  width: auto;
+}

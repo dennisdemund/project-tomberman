@@ -13,8 +13,6 @@ class Gamewindow {
         this.ctx = this.canvas.getContext("2d");
         this.canvas.width = this.width;
         this.canvas.height = this.height;
-        //this.backgroundImage = new Image();
-        //this.backgroundImage.src = "./pictures/game_background.png";
     }
 
     drawHUD() {

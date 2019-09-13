@@ -1,9 +1,11 @@
 //Creating necessary EventHandlers
 document.addEventListener("keydown", keyDownHandler);
 
+//Initializing helpful variables which are needed for the progress bar
 var element = document.getElementById("myprogressBar");    
 var counter = 100;
 
+//Initializing functions for game functionality and additional features like background Music
 function updateProgressBar() { 
     var finished = setInterval(scene, 70); 
     function scene() { 
@@ -55,31 +57,17 @@ function keyDownHandler(e) {
     }
 }
 
-
-
 //Creating Objects from other classes
 player1Tree = new Tree();
 player1 = new Player();
 gameWindow = new Gamewindow();
 
 
-playSound = async soundname =>
-  { 
-    try{
-        var thissound = document.getElementById(soundname);
-        await thissound.play();
-    }
-    catch(err){console.log(err.message)} 
-  }
-
 //Loading the HTML
 window.onload = () => {
-    document.getElementById("myCanvas").style.background = "";
-    playSound("audio");
     gameWindow.createBackground();
     gameWindow.drawCharacter();
     gameWindow.drawTree();
     gameWindow.drawHUD();
     updateProgressBar();
-
 }

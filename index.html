@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
-    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.js"></script>
+    <script language="javascript" type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.js"></script>
 
 
 </head>
+
 <body>
-
-    <div id="Progress_Status"> 
-        <div id="myprogressBar"></div> 
-    </div> 
-
     <audio src="./soundtracks/gameSoundtrack.ogg" id="audio" muted='muted' autostart="true"></audio>
 
-    <canvas id="myCanvas" width="800" height="600"></canvas>
+<h1>Project Tomberman</h1>
 
+    <div class="flexbox">
+        <img id="charLeft" src="./pictures/character_standing_left.png" alt="Tomberman">
+        <canvas id="myCanvas" width="800" height="600"></canvas>
+        <img id="charRight" src="./pictures/character_standing_right.png" alt="Tomberman">
+    </div>
+
+    <div id="Progress_Status">
+        <div id="myprogressBar"></div>
+    </div>
 
     <script src="./classes/window.js"></script>
     <script src="./classes/player.js"></script>
@@ -29,4 +36,5 @@
     <script src="./script.js"></script>
 
 </body>
+
 </html>
