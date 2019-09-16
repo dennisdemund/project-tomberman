@@ -17,6 +17,7 @@ function setupNewGame() {
   gameWindow.drawCharacter();
   gameWindow.drawTree();
   player1Tree.clearTree();
+  gameWindow.refreshHighscore();
   player1.score = 0;
   gameWindow.counter = 100;
 }
@@ -69,4 +70,14 @@ window.onload = () => {
   gameWindow.createBackground();
   gameWindow.drawCharacter();
   gameWindow.drawTree();
+}
+
+
+//Experimental: Setting up atabase
+let scoreTable = TAFFY([{"id":1,"highscore":0}]);
+
+function checkIfNewRecord(){
+  if (player1.highscore > scoreTable({id:1}).select("highscore")) {
+    scoreTable({id:1}).update({"highscore":player1.highscore})
+  }
 }

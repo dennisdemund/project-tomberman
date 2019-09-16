@@ -12,10 +12,10 @@ class Gamewindow {
 
     //updating the progressBar
     updateProgressBar() {
-        let finished = setInterval(() => {
+        setInterval(() => {
             if (this.counter == 0) {
-                //clearInterval(finished);
                 window.alert("Your Time´s up! Better Luck next Time!");
+                checkIfNewRecord();
                 setupNewGame();
             } else {
                 this.counter--;
@@ -41,7 +41,7 @@ class Gamewindow {
     refreshHighscore() {
         if (player1.score > player1.highscore) {
             player1.highscore = player1.score
-            document.getElementById("highscore").innerHTML = `High Score: ${player1.highscore}`;
+            document.getElementById("highscore").innerHTML = `High Score: ${scoreTable({id:1}).select("highscore")}`;
         }
     }
 
@@ -91,6 +91,7 @@ class Gamewindow {
         player1.score++;
         if (player1Tree.treeArr[6] == 1 && player1.characterPos == "left" || player1Tree.treeArr[6] == 2 && player1.characterPos == "right") {
             window.alert("GAME OVER!");
+            checkIfNewRecord();
             setupNewGame();
         }
     }
