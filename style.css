@@ -1,27 +1,24 @@
 :root {
   background-color: burlywood;
-
 }
 
 html, body {
     overflow: hidden;
-    padding: 0; 
-    margin: 0; 
 }
+
+#projectName {
+  display: block;
+  margin: auto;
+  width: 50%;
+  padding: 1rem;
+}
+
 #myCanvas {
-  padding: 0;
   margin: auto;
   display: block;
   width: 850px;
-    background-image: url('pictures/game_background.png');
-    background-repeat: repeat;
-    background-size: cover;
-}
-
-h1 {
-  font-size: 3.5rem;
-  text-align: center;
-  margin: 0;
+  background-image: url('pictures/game_background.png');
+  background-size: cover;
 }
 
 .p5Canvas {
@@ -32,7 +29,6 @@ h1 {
   margin: auto; 
   width: 40%; 
   background-color: #ddd; 
-
 } 
   
 #myprogressBar { 
@@ -45,24 +41,13 @@ h1 {
 } 
 
 .flexbox {
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
-#charLeft {
+#charLeft, #charRight {
   margin: auto;
-  text-align: left;
-  height: 30rem;
-  width: auto;
-}
-
-#charRight {
-  margin: auto;
-  text-align: left;
-  height: 30rem;
+  height: 28rem;
   width: auto;
 }
 
@@ -72,11 +57,9 @@ h1 {
   width: auto;
 }
 
-
-
 #score, #highscore {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  text-align: center;
   justify-content: space-around;
-  align-content: center;
-  margin: 0;
+  margin: 1;
 }

@@ -9,25 +9,27 @@
     <link rel="stylesheet" href="./style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
-    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.js"></script>
+    <script language="javascript" type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.js"></script>
 
 </head>
 
 <body>
     <audio src="./soundtracks/gameSoundtrack.ogg" id="audio" muted='muted' autostart="true"></audio>
 
-    <h1>Project Tomberman</h1>
+    <img id="projectName" src="./pictures/project_name.png" alt="Project Name">
 
     <div class="flexbox">
-        <h2 id="score">Current Score: 0</h2>
-        <h2 id="highscore">High Score: 0</h2>
-    </div>
+        <div>
+            <h2 id="score">Current Score: 0</h2>
+            <img id="charLeft" src="./pictures/character_standing_left.png" alt="Tomberman">
+        </div>
 
-
-    <div class="flexbox">
-        <img id="charLeft" src="./pictures/character_standing_left.png" alt="Tomberman">
         <canvas id="myCanvas" width="800" height="600"></canvas>
-        <img id="charRight" src="./pictures/character_standing_right.png" alt="Tomberman">
+        <div>
+            <h2 id="highscore">High Score: 0</h2>
+            <img id="charRight" src="./pictures/character_standing_right.png" alt="Tomberman">
+        </div>
     </div>
 
     <div class="flexbox">

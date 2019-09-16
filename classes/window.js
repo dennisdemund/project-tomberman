@@ -8,12 +8,10 @@ class Gamewindow {
         this.mainTreeY = 20;
         this.progressBar = e;
         this.counter = 100;
-        this.interval = 70;
     }
 
     //updating the progressBar
     updateProgressBar() {
-        console.log(this.interval);
         let finished = setInterval(() => {
             if (this.counter == 0) {
                 clearInterval(finished);
@@ -23,7 +21,7 @@ class Gamewindow {
                 this.counter--;
                 this.progressBar.style.width = this.counter + '%';
             }
-        }, this.interval);
+        }, 70);
     }
 
     //initializing the main background
