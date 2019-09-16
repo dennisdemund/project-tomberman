@@ -14,7 +14,7 @@ class Gamewindow {
     updateProgressBar() {
         let finished = setInterval(() => {
             if (this.counter == 0) {
-                clearInterval(finished);
+                //clearInterval(finished);
                 window.alert("Your Time´s up! Better Luck next Time!");
                 setupNewGame();
             } else {

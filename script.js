@@ -18,7 +18,6 @@ function setupNewGame() {
   gameWindow.drawTree();
   player1Tree.clearTree();
   player1.score = 0;
-  clickCount = 0;
   gameWindow.counter = 100;
 }
 
