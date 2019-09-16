@@ -12,6 +12,7 @@ class Player {
         this.characterImageRight = new Image();
         this.characterImageRight.src = "./pictures/character_standing_right.png";
         this.score = 0;
+        this.highscore = 0;
     }
 
     moveCharacter(direction) {

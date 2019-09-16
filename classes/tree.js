@@ -38,4 +38,8 @@ class Tree {
     moveBranches() {
         this.treeArr.unshift(0);
     }
+
+    clearTree(){
+        this.treeArr = [];
+    }
 }

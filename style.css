@@ -1,5 +1,6 @@
 :root {
   background-color: burlywood;
+
 }
 
 html, body {
@@ -79,7 +80,7 @@ h1 {
   width: auto;
 }
 
-#score {
+#score, #highscore {
   font-size: 3rem;
   justify-content: space-around;
   align-content: center;
