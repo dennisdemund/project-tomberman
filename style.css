@@ -19,7 +19,7 @@ html, body {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   text-align: center;
   margin: 0;
 }
@@ -66,19 +66,13 @@ h1 {
   width: auto;
 }
 
-#arrowLeft {
+#arrowLeft, #arrowRight {
   margin: auto;
-  text-align: left;
   height: 8rem;
   width: auto;
 }
 
-#arrowRight {
-  margin: auto;
-  text-align: right;
-  height: 8rem;
-  width: auto;
-}
+
 
 #score, #highscore {
   font-size: 3rem;
